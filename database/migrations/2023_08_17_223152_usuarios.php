@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('primer_apellido', 50);
             $table->string('segundo_apellido', 50);
             $table->unsignedBigInteger ('id_rol');
-            $table->string('password', 50);
+            $table->text('password');
             // Agrega más columnas aquí
             $table->timestamps();
 
