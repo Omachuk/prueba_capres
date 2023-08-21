@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+//Route::view('/introduccion-a-blade','introduccion')->name('introduccion');
+Route::view('/','Inicio.login')->name('login');
 
-Route::get('/', function () {
-    return view('welcome');
-});
