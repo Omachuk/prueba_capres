@@ -1,25 +1,7 @@
 @extends('dashboard.header')
 
 @section('content')
-<style type="text/css">
-        .divider:after,
-        .divider:before {
-            content: "";
-            flex: 1;
-            height: 1px;
-            background: #eee;
-        }
-
-        .h-custom {
-            height: calc(100% - 73px);
-        }
-
-        @media (max-width: 450px) {
-            .h-custom {
-                height: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="{{asset('assets/css/estilo.css')}}">
     <section class="vh-100">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -31,7 +13,9 @@
                 </div>
 
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form>
+                    <form action="/login" method="post">
+                      @method('post');
+                      @csrf
                         <div class="row align-items-start">
                             <div class="col-2"></div>
                             <div class="col-8 text-center">
@@ -67,27 +51,27 @@
 
                         <!-- Email input -->
                         <div class="form-outline mb-4">
-                            <input type="text" id="usuario" class="form-control form-control-lg"
-                                placeholder="Ingrese su usuario" />
                             <label class="form-label" for="usuario">Usuario</label>
+                            <input type="text" name="usuario" id="usuario" class="form-control form-control-lg"
+                                placeholder="Ingrese su usuario" />
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-3">
-                            <input type="password" id="password" class="form-control form-control-lg"
-                                placeholder="Ingrese su contraseña" />
                             <label class="form-label" for="password">Contraseña</label>
+                            <input type="password" name="password" id="password" class="form-control form-control-lg"
+                                placeholder="Ingrese su contraseña" />
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
                             <div class="d-grid gap-2">
-                                <button type="button" class="btn btn-primary btn-lg">Ingresar</button>
+                                <button class="btn btn-primary btn-lg">Ingresar</button>
                             </div>
 
 
                             <p class="small fw-bold mt-2 pt-1 mb-0">
-                                Don't have an account?
-                                <a href="#!" class="link-danger">Register</a>
+                                ¿No tienes una cuenta?
+                                <a href="{{ route('registrar') }}" class="link-danger">Registrarse</a>
                             </p>
                         </div>
 

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 //Route::view('/introduccion-a-blade','introduccion')->name('introduccion');
 Route::view('/','Inicio.login')->name('login');
+Route::post('/login', [InicioController::class, 'loginProccess']);
+Route::get('/registrar',[InicioController::class, 'registrarProccess'])->name('registrar');
+Route::post('/registrar', [InicioController::class, 'registrarPersonal']);
 

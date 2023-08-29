@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuarios', function (Blueprint $table) {
+        /*Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
             $table->string('username', 50);
             $table->string('primer_nombre', 50);
@@ -21,11 +21,11 @@ return new class extends Migration
             $table->unsignedBigInteger ('id_rol');
             $table->text('password');
             // Agrega más columnas aquí
-            $table->timestamps();
+            //$table->timestamps();
 
             // Crear la clave foránea
-            $table->foreign('id_rol')->references('id')->on('rol');
-        });
+            //$table->foreign('id_rol')->references('id')->on('rol');
+        });*/
     }
 
     /**
@@ -33,6 +33,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuarios');
+        //Schema::dropIfExists('usuarios');
     }
 };
